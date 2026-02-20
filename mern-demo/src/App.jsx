@@ -1,42 +1,31 @@
-import './App.css'
+import React, { useState } from "react";
 
 function App() {
-
-
-const first = [1, 2, 3]
-const second = [...first, 7, 11, 27] 
-
-const fruit = ['Mango', 'Grapes', 'Pinapple']
-
-  class Person {
-    constructor(name, age) {
-      this.name = name
-      this.age = age
-    }
-
-    greet() {
-      return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
-    }
-  }
-  const p = new Person("vimal", 20)
-
-
-  const [a, b, c] = first 
+  const [count, setCount] = useState(0);
 
   return (
-
     <div>
-    <ul>
-      {fruit.map((item) => <li key={item}>{item}</li>)}
-    </ul>
-    <p>First array: {first}</p><p>Second array: {second}</p>
-
-    <p>Person: {p.name}, Age: {p.age}</p>
-    <p>{p.greet()}</p>
-
-    <p>Destructured values: a={a}, b={b}, c={c}</p>
-</div>
-  )
+      <header>
+        <ul>
+          <li>home</li>
+          <li>about</li>
+          <li>activity</li>
+          <li>contact</li>
+        </ul>
+      </header>
+      <h1>ACHARIYA COLLEGE OF ENGINEERING TECHNOLOGY</h1>
+      <h2>students : {count}</h2>
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/024/724/633/non_2x/a-happy-smiling-young-college-student-with-a-book-in-hand-isolated-on-a-transparent-background-generative-ai-free-png.png"
+        alt="student"
+        width="500"
+      />
+      <br />
+      <button onClick={() => setCount(count + 1)}>Add</button>
+      
+      <button onClick={() => setCount(count - 1)}>minus</button>
+    </div>
+  );
 }
 
-export default App
+export default App;
